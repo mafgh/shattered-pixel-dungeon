@@ -362,6 +362,7 @@ public class GameScene extends PixelScene {
 		}
 
 		Dungeon.hero.next();
+		Dungeon.hero.bless();
 
 		Camera.main.target = hero;
 		fadeIn();
