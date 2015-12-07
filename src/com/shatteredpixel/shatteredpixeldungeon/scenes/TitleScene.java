@@ -151,15 +151,22 @@ public class TitleScene extends PixelScene {
 			btnHighscores.setPos( w / 2, btnPlay.top() );
 		}
 
+		BitmapText bd = new BitmapText( "BD v 0.0.1", pixelFont );
+		bd.measure();
+		bd.hardlight(0x888888);
+		bd.x = w - bd.width();
+		bd.y = h - bd.height();
+		add( bd );
+
 		BitmapText version = new BitmapText( "v " + Game.version + "", pixelFont);
 		version.measure();
 		version.hardlight( 0xCCCCCC );
 		version.x = w - version.width();
-		version.y = h - version.height();
+		version.y = h - version.height() - bd.height;
 		add( version );
 
 		Button changes = new ChangesButton();
-		changes.setPos( w-changes.width(), h - version.height() - changes.height());
+		changes.setPos( w-changes.width(), h - version.height() - changes.height() - bd.height());
 		add( changes );
 		
 		PrefsButton btnPrefs = new PrefsButton();
